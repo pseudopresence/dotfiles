@@ -40,3 +40,16 @@ filetype indent on
 set t_Co=256    " set 256 colours
 set title           " set the terminal title
 
+" disable cursor keys in normal mode
+noremap <Left>  :echo "no!"<cr>
+noremap <Right> :echo "no!"<cr>
+noremap <Up>    :echo "no!"<cr>
+noremap <Down>  :echo "no!"<cr>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+vnoremap <Left>  <NOP>
+vnoremap <Right> <NOP>
+vnoremap <Up>    <NOP>
+vnoremap <Down>  <NOP>
