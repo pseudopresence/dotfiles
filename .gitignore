@@ -1,0 +1,20 @@
+# Only whitelist certain directories and files - see
+# https://jasonstitt.com/gitignore-whitelisting-patterns
+
+# Ignore everything
+*
+# But descend into directories
+# EDIT: super slow!
+# !*/
+
+!.bashrc
+!.gitconfig
+!.gitignore
+!.gitignore_global
+!.profile
+!.tmux.conf
+!.vimrc
+!.ys-fib.zsh-theme
+!.zshrc
+!.zprofile
+
