@@ -1,6 +1,27 @@
+! TODO - desktop background
+! TODO - working transparency
+! TODO - Xft. font hinting/rendering settings
+
+! Xft font rendering
+! Not entirely sure what they do but recommended...
+Xft.hinting: true
+Xft.rgba: none
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+! Fade out when not focused
+URxvt.fading: 30
+
+! Colour depth
+URxvt.depth: 32
 ! Colours to match macOS iTerm2 Chalkboard
-! foreground/background - TODO
-URxvt.background: #000000
+! foreground/background - TODO would like to match to my vim colours? Or to
+! Chalkboard? want everything to match in the end...
+! Fake transparency
+! URxvt.inheritPixmap: true
+! URxvt.transparent: true
+! True transparency - needs compositor maybe?
+URxvt.background: [70]#000000
 URxvt.foreground: #ffffff
 ! black
 URxvt.color0: #000000
@@ -28,13 +49,13 @@ URxvt.color7: #e0e0e0
 URxvt.color15: #feffff
 
 ! font - not found?
+! pixelSize instead of size, and letterSpace -1, needed to fix font rendering
 ! URxvt.font: xft:Fura\ Code\ Light\ Nerd\ Font\ Complete\ Mono:size=11
-URxvt.font: xft:Monospace:size=11
+URxvt.font: xft:Monospace:pixelSize=12
+URxvt.letterSpace: -1
 
-! no scrollbar - broken
+! no scrollbar - need to logout and back in for it to take effect
 URxvt.scrollBar: false
 URxvt.scrollBar_right: false
 URxvt.scrollBar_floating: false
 
-! font chars are way too far apart?
-URxvt.letterSpace: -1
