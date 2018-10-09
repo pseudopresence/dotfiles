@@ -21,3 +21,8 @@
 !.zshrc
 !.zprofile
 !README.md
+!.config
+!.config/sxhkd
+!.config/sxhkd/sxhkdrc
+!.config/bspwm
+!.config/bspwm/bspwmrc
