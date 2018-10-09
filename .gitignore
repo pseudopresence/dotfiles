@@ -7,10 +7,13 @@
 # EDIT: super slow!
 # !*/
 
+# NOTE: I've untracked .gitconfig and .gitignore_global
+# These are too different between my work macOS and my home envs.
+
 !.bashrc
-!.gitconfig
+#!.gitconfig
 !.gitignore
-!.gitignore_global
+#!.gitignore_global
 !.profile
 !.tmux.conf
 !.vimrc
