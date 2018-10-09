@@ -1,3 +1,6 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -60,6 +63,9 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
 # Disable shared history because wow this is the worst feature
 # (My #1 use case for history is pressing up+enter in a terminal,
 # this feature breaks it if I'm working in multiple terminals)
@@ -79,7 +85,7 @@ unsetopt share_history
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
