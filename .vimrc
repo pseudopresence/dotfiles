@@ -77,7 +77,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-eunuch' 
 
   " Autocomplete plugin that integrates with many things
-  Plug 'Valloric/YouCompleteMe'
+  "Plug 'Valloric/YouCompleteMe'
     " TODO look further into these config options
     " map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
     "let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
