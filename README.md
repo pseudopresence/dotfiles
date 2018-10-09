@@ -23,7 +23,7 @@ Gonna try this
 
 Ah beans I'm not using this yet
 
-TODO set ANSI Colors as the macOS 'Chalkboard' set:
+DONE set ANSI Colors as the macOS 'Chalkboard' set:
 
 Regular:
 Black   000000

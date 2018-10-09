@@ -1,0 +1,40 @@
+! Colours to match macOS iTerm2 Chalkboard
+! foreground/background - TODO
+URxvt.background: #000000
+URxvt.foreground: #ffffff
+! black
+URxvt.color0: #000000
+URxvt.color8: #414141
+! red
+URxvt.color1: #cf8784
+URxvt.color9: #e2b9b8
+! green
+URxvt.color2:  #82cb85
+URxvt.color10: #b7e0b8
+! yellow
+URxvt.color3:  #cdcc84
+URxvt.color11: #e1e0b8
+! blue
+URxvt.color4: #8688ce
+URxvt.color12: #b8bae2
+! magenta
+URxvt.color5: #cf8acd
+URxvt.color13: #e2bae1
+! cyan
+URxvt.color6: #82ccce
+URxvt.color14: #b7e0e2
+! white
+URxvt.color7: #e0e0e0
+URxvt.color15: #feffff
+
+! font - not found?
+! URxvt.font: xft:Fura\ Code\ Light\ Nerd\ Font\ Complete\ Mono:size=11
+URxvt.font: xft:Monospace:size=11
+
+! no scrollbar - broken
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+
+! font chars are way too far apart?
+URxvt.letterSpace: -1

@@ -17,6 +17,8 @@
 !.profile
 !.tmux.conf
 !.vimrc
+!.Xdefaults
+!.Xresources
 !.ys-fib.zsh-theme
 !.zshrc
 !.zprofile
