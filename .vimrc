@@ -170,13 +170,13 @@ set t_BE=
 
 "-- BEHAVIOUR ----------------------------------------------------------------
 " Enable mouse for all modes.
-set mouse=a
+" set mouse=a
 " Use xterm2 compatible mouse codes (allows dragging to trigger visual mode).
-set ttymouse=xterm2
+" set ttymouse=xterm2
 
 " Make the unnamed register the same as the system clipboard register.
 " Yanking and pasting will interact directly with the system clipboard.
-set clipboard=unnamed
+" set clipboard=unnamed
 
 " When splitting vertically/horizontally, put the new window below / right as
 " opposed to above / left.
