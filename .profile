@@ -6,7 +6,7 @@ if [ -n "${BASH_VERSION}" ]; then
 fi
 
 
-. /Users/cswetenham/src/torch/install/bin/torch-activate
+# . /Users/cswetenham/src/torch/install/bin/torch-activate
 
 # added by Anaconda3 4.1.1 installer
 export PATH="/Users/cswetenham/anaconda/bin:$PATH"
