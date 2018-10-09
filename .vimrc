@@ -242,7 +242,14 @@ nnoremap <silent> ]B :blast<CR>
 set background=dark
 
 " Set the colour scheme.
-" TODO needs installing
+" Vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+   set termguicolors
+endif
+
+" Neovim 0.1.3 or 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 " colorscheme gruvbox
 " colorscheme hybrid
 colorscheme kolor
