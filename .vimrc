@@ -192,7 +192,7 @@ set backspace=indent,eol,start
 " 80 char lines. Tab inserts 2 spaces. Convert all tabs to spaces. After end of
 " line, try to figure out the corrent indentation for the next line.
 set textwidth=0
-set wrapmargin=80
+set wrapmargin=0
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
