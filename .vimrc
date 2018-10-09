@@ -14,7 +14,9 @@ set nowritebackup
 set noswapfile
 
 " Set spacebar as the leader key
-let mapleader = " "
+" TODO this does really weird things, it needs to be leader ONLY in normal mode,
+" not insert mode!
+" let mapleader = " "
 
 " Don't close buffers with unsaved changes when you open a new file, instead
 " hide them?
