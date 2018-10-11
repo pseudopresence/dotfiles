@@ -15,6 +15,30 @@ Theme: Adwaita-dark
 
 TODO
 
+## amixer
+
+TODO
+
+## polybar
+
+TODO - volume changes not reflected?
+
+## xbacklight
+
+TODO
+
+## gtk
+
+TODO
+
+## systemctl
+
+TODO
+
+## sxhkd
+
+TODO
+
 ## bspwm
 
 Ah man, okay, so this needs:

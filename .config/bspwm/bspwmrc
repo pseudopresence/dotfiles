@@ -29,5 +29,8 @@ feh --bg-fill ~/Downloads/Wallpapers/509074.jpg
 # compositor - random set of flags, needs testing
 compton --daemon --no-fading-openclose --no-fading-destroyed-argb --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-swap-method 3
 
+# bar
+polybar --reload default &
+
 # launcher
 kupfer &

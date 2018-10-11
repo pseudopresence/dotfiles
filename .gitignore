@@ -28,3 +28,5 @@
 !.config/sxhkd/sxhkdrc
 !.config/bspwm
 !.config/bspwm/bspwmrc
+!.config/polybar
+!.config/polybar/config
