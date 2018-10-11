@@ -30,3 +30,4 @@
 !.config/bspwm/bspwmrc
 !.config/polybar
 !.config/polybar/config
+!.config/polybar/launch.sh

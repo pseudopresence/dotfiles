@@ -35,6 +35,10 @@ TODO
 
 TODO
 
+## feh
+
+TODO
+
 ## sxhkd
 
 TODO
@@ -49,6 +53,8 @@ compton: for compositing
 TODO enable fading out of inactive window - and if it works, turn off the fading in urxvt!
 kupfer: for launching, has icons which I want, can be themed by gtk?
 has some custom property names?
+
+TODO: named desktops/workspaces
 
 TODO: get a good gtk dark theme - I have an example of a good one, the setup with the red bar
 on the left of windows, in a tab on my macbook from a /r/unixporn post in the top of 'workflow'
@@ -105,7 +111,7 @@ Get Bold, Light, Medium, Regular and Retina, complete/ versions, OTF format, Mon
 
 ## zsh
 
-
+TODO
 
 ## oh-my-zsh
 
