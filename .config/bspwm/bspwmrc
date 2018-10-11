@@ -21,7 +21,12 @@ bspc config gapless_monocle      true
 feh --bg-fill ~/Downloads/Wallpapers/509074.jpg
 
 # compositor - random set of flags, needs testing
-compton --daemon --no-fading-openclose --no-fading-destroyed-argb --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-swap-method 3
+# TODO put these in a config file instead!
+# compton --daemon --no-fading-openclose --no-fading-destroyed-argb --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-swap-method 3
+# compton --daemon --no-fading-openclose --no-fading-destroyed-argb --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-swap-method -1
+# doesn't have the issue with weird lines in terminal
+# compton --daemon --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-swap-method 0
+compton --daemon --vsync opengl-swc --backend glx --blur-background --xrender-sync --xrender-sync-fence --glx-no-stencil --glx-swap-method 0
 
 # bar
 $HOME/.config/polybar/launch.sh

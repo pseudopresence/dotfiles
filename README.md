@@ -11,6 +11,10 @@ Install gnome-tweaks to be able to set monospace font systemwide.
 11pt Fura Code Light Nerd Font Complete.
 Theme: Adwaita-dark
 
+## compton
+
+TODO
+
 ## tmux
 
 TODO
