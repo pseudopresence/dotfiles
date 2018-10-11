@@ -121,5 +121,6 @@ Symlink ~/.oh-my-zsh/custom/ys-fib.zsh-theme to $HOME/.ys-fib.zsh-theme
 
 ## vim
 
+TODO set theme background to terminal background so we get transparency?
 TODO how to install/refresh plugins?
 TODO how to get the correct font?

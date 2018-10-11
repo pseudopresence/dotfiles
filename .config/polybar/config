@@ -108,14 +108,16 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = 
-modules-right = filesystem xbacklight memory cpu battery temperature date powermenu
+; TODO xbacklight
+; modules-right = filesystem xbacklight memory cpu battery temperature date powermenu
+modules-right = filesystem memory cpu battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
-tray-transparent = true
-tray-background = #0063ff
+;tray-transparent = true
+;tray-background = #0063ff
 
-wm-restack = bspwm
+;wm-restack = bspwm
 ;wm-restack = i3
 
 ;override-redirect = true

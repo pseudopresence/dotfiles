@@ -1,10 +1,4 @@
-#! /bin/sh
-
-# TODO set vim
-# theme bg to
-# terminal bg
-# so we get
-# transparency
+#! /usr/bin/env bash
 
 sxhkd &
 
@@ -33,4 +27,5 @@ compton --daemon --no-fading-openclose --no-fading-destroyed-argb --vsync opengl
 $HOME/.config/polybar/launch.sh
 
 # launcher
-kupfer &
+# I think this messes things up for some reason??
+# kupfer &
