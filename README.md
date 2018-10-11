@@ -15,6 +15,15 @@ Theme: Adwaita-dark
 
 TODO
 
+## unifont
+
+## siji
+Might need to add to some script that gets executed during xlogin:
+  xset +fp /home/fib/.fonts
+  xset fp rehash
+
+Ok, didn't have to do that, but had to rename /etc/fonts/conf.d/70-no-bitmaps.conf to .conf.old.
+
 ## tmux
 
 TODO
@@ -26,6 +35,12 @@ TODO
 ## polybar
 
 TODO - volume changes not reflected?
+TODO - backlight changes not reflected?
+TODO - want logout / sleep button?
+TODO - need a font with emoji support for icons? Maybe Noto Sans? Look it up in the docs.
+
+NOTE had to rebuild, manually turning on a bunch of options and installing extra libs.
+
 
 ## xbacklight
 

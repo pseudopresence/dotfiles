@@ -10,7 +10,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
 # TODO not portable, but, this isn't using my .zshrc because it's bash and so arhjrarhajrarh
-$HOME/local/bin/polybar --loglevel=trace default >> $HOME/mylog.txt 2>&1 &  
+$HOME/local/bin/polybar --log=trace --reload default &  
 
-echo "Polybars launched." >> $HOME/mylog.txt
+echo "Polybars launched."
 
