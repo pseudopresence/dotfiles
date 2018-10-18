@@ -67,7 +67,7 @@ ${git_info}\
 %{$bg[black]%} \
 %{$fg[white]%}[%*] L:%L N:%i%E%{$reset_color%}
 %{$reset_color%}\
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[red]%}> %{$reset_color%}"
 # %E will clear with current bg to end of line, but then we run into trouble with scrollback
 # TODO now with the reset_color scrollback is mostly fine except the prompt lines themselves aren't cleared
 if [[ "$USER" == "root" ]]; then
@@ -89,5 +89,5 @@ ${git_info}\
 %{$bg[black]%} \
 %{$fg[white]%}[%*] L:%L N:%i%E%{$reset_color%}
 %{$reset_color%}\
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$fg[red]%}# %{$reset_color%}"
 fi
