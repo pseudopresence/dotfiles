@@ -60,7 +60,9 @@ plugins=(git brew dircycle osx python screen tmux)
 export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 export PATH="$HOME/src/git-external/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
-
+export PATH="$PATH:$HOME/code/selenium-all/src/git-map"
+# Make sure we find the brew ruby before the system ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -101,6 +103,8 @@ if [[ $(hostname) == "chris-mbp" ]]; then
   alias clion="open /Applications/CLion.app & disown"
   alias qt-creator="open /Users/cswetenham/Qt/Qt\ Creator.app & disown"
   alias nuke-build="rm -rf build/ && mkdir build && cd build && cmake ../src -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS=\"-Wall -Werror\" '-GCodeBlocks - Ninja' && ninja -j 10"
+  # TODO doesn't work as an alias but works inlined after command?
+  # alias sayit="if [ $? -ne 0 ] ; then say \"completed with errors\" ; else say \"completed successfully\" ; fi"
 
   eval $(ssh-agent)
 
@@ -114,3 +118,6 @@ if [[ $(hostname) == "chris-mbp" ]]; then
   export JAVA_HOME=`/usr/libexec/java_home`
   export CODE_DIR="${HOME}/code"
 fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
