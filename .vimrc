@@ -40,8 +40,10 @@ endif
 
 " After editing or to update plugins, run ':PlugUpdate'
 call plug#begin('~/.vim/plugged')
+  " Install wal colourscheme
+  Plug 'dylanaraps/wal.vim'
   " Install the kolor colourscheme
-  Plug 'zeis/vim-kolor'
+  " Plug 'zeis/vim-kolor'
   " Install many colourschemes
   " Plug 'flazz/vim-colorschemes'
   " Install airline, one of several status line scripts
@@ -51,7 +53,7 @@ call plug#begin('~/.vim/plugged')
   " Install the airline theme that matches our colourscheme
   Plug 'vim-airline/vim-airline-themes'
     let g:airline_powerline_fonts = 1
-    let g:airline_theme='kolor'
+    "let g:airline_theme='kolor'
   " Set the tmux statusline scheme from the vim one. Can also use this plugin to
   " generate lines for the tmux config file that set the appropriate statusline
   Plug 'edkolev/tmuxline.vim'
@@ -164,7 +166,7 @@ call plug#end()
 " Set the terminal title.
 set title
 " Set 256 colours.
-set t_Co=256
+" set t_Co=256
 " Fixes pasted newlines turning into ^M for some reason.
 set t_BE=
 
@@ -251,10 +253,10 @@ set background=dark
 " Neovim 0.1.3 or 0.1.4
 "let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-
+colorscheme wal
 " colorscheme gruvbox
 " colorscheme hybrid
-colorscheme kolor
+" colorscheme kolor
 
 " Show the current partial command in the status line.
 set showcmd
