@@ -4,11 +4,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="ys-fib"
 
 ### pywal
@@ -27,15 +26,21 @@ source ~/.cache/wal/colors-tty.sh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -56,26 +61,22 @@ source ~/.cache/wal/colors-tty.sh
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew dircycle osx python screen tmux)
+plugins=(git)
 
-# User configuration
-
-export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-export PATH="$HOME/src/git-external/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$PATH:$HOME/code/selenium-all/src/git-map"
-# Make sure we find the brew ruby before the system ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -112,10 +113,13 @@ unsetopt share_history
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Config specific to work laptop
 if [[ $(hostname) == "chris-mbp" ]]; then
-  alias netbeans="open /Applications/NetBeans/NetBeans\ 8.1.app & disown"
-  alias clion="open /Applications/CLion.app & disown"
-  alias qt-creator="open /Users/cswetenham/Qt/Qt\ Creator.app & disown"
-  alias nuke-build="rm -rf build/ && mkdir build && cd build && cmake ../src -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS=\"-Wall -Werror\" '-GCodeBlocks - Ninja' && ninja -j 10"
+  export PATH="$HOME/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+  export PATH="$HOME/src/git-external/bin:$PATH"
+  export PATH="$HOME/.cargo/bin:$PATH"
+  export PATH="$PATH:$HOME/code/selenium-all/src/git-map"
+  # Make sure we find the brew ruby before the system ruby
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
+  
   # TODO doesn't work as an alias but works inlined after command?
   # alias sayit="if [ $? -ne 0 ] ; then say \"completed with errors\" ; else say \"completed successfully\" ; fi"
 
