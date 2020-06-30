@@ -76,6 +76,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$HOME/code/selenium-all/src/git-map"
 # Make sure we find the brew ruby before the system ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+# conda-environment-setup.sh 1.0
+. /Users/cswetenham/miniconda/etc/profile.d/conda.sh
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -112,18 +114,22 @@ unsetopt share_history
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Config specific to work laptop
 if [[ $(hostname) == "chris-mbp" ]]; then
-  alias netbeans="open /Applications/NetBeans/NetBeans\ 8.1.app & disown"
-  alias clion="open /Applications/CLion.app & disown"
-  alias qt-creator="open /Users/cswetenham/Qt/Qt\ Creator.app & disown"
-  alias nuke-build="rm -rf build/ && mkdir build && cd build && cmake ../src -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS=\"-Wall -Werror\" '-GCodeBlocks - Ninja' && ninja -j 10"
+  # alias netbeans="open /Applications/NetBeans/NetBeans\ 8.1.app & disown"
+  # alias clion="open /Applications/CLion.app & disown"
+  # alias qt-creator="open /Users/cswetenham/Qt/Qt\ Creator.app & disown"
+  # alias nuke-build="rm -rf build/ && mkdir build && cd build && cmake ../src -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_CXX_FLAGS=\"-Wall -Werror\" '-GCodeBlocks - Ninja' && ninja -j 10"
   # TODO doesn't work as an alias but works inlined after command?
   # alias sayit="if [ $? -ne 0 ] ; then say \"completed with errors\" ; else say \"completed successfully\" ; fi"
+  
+  alias wallpaper='feh --auto-zoom --scale-down --randomize --action ";wal -i \"%f\" --backend colorz" $HOME/Documents/Wallpapers'
+  alias sim="$HOME/code/simulator/tools/launcher/launcher.py"
+  alias artifactory="python3 $HOME/code/simulator/tools/artifactory-tool/artifactory.py"
 
   eval $(ssh-agent)
 
   # Added by tools-python installer
-  alias activate-oxpy='export MAGICK_HOME=/usr/local/Cellar/imagemagick@6/6.9.9-26 && source /Users/cswetenham/miniconda/bin/activate oxbotica'
-  alias deactivate-oxpy='source /Users/cswetenham/miniconda/bin/deactivate oxbotica'
+  alias activate-oxpy='export MAGICK_HOME=/usr/local/Cellar/imagemagick@6/6.9.9-26 && source /Users/cswetenham/miniconda/bin/activate oxbotica-pkg'
+  alias deactivate-oxpy='source /Users/cswetenham/miniconda/bin/deactivate oxbotica-pkg'
 
   # export PYTHONPATH="$HOME/code/selenium-all/src/acs-llc-interface/vehiclecaninterface/scripts:$HOME/code/selenium-all/build/datatypes:$HOME/code/selenium-all/build/acsllcinterface_datatypes_python:/usr/local/lib/python2.7/site-packages"
   # So that Netbeans can find lldb debug server (a version that is correctly signed)
