@@ -1,0 +1,3 @@
+"Settings"
+"Settings Manager" "/usr/share/icons/hicolor/48x48/apps/org.xfce.settings.manager.png" exec "xfce4-settings-manager"
+"Xfce Screensaver" "/usr/share/icons/hicolor/48x48/apps/org.xfce.ScreenSaver.png" exec "xfce4-screensaver-preferences"

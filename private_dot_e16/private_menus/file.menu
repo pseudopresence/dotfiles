@@ -1,0 +1,7 @@
+"User menus"
+"User application list" NULL menu "user_apps.menu"
+"Applications" NULL menu "menus_apps/index.menu"
+"Epplets" NULL menu "epplets.menu"
+"Restart" NULL "exit restart"
+"Regen Menus (user)" NULL exec "python $HOME/.local/share/e16/scripts/e_gen_menu"
+"Log out" NULL "exit logout"

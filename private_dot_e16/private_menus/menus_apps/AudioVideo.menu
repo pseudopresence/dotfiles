@@ -1,0 +1,5 @@
+"AudioVideo"
+"Parole Media Player" "/usr/share/icons/hicolor/48x48/apps/org.xfce.parole.png" exec "parole"
+"Qt V4L2 test Utility" "/usr/share/icons/hicolor/32x32/apps/qv4l2.png" exec "qv4l2"
+"Qt V4L2 video capture utility" "/usr/share/icons/hicolor/32x32/apps/qvidcap.png" exec "qvidcap"
+"Volume Control" "multimedia-volume-control" exec "pavucontrol"

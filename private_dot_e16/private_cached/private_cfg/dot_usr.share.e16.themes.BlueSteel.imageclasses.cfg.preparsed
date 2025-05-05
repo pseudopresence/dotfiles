@@ -1,0 +1,771 @@
+1001 1
+12 999
+  100 COORDS
+  351 "common/images/bg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+1 999
+  100 "COORDS"
+  351 "*font-coords"
+  204 1
+  205 255 255 255
+  206 0 0 0
+  201 0
+1000
+12 999
+  100 "DIALOG"
+  351 "common/images/bg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+12 999
+  100 "DIALOG_BUTTON"
+  351 "dialogs/images/button_up.png"
+    357 3 5 3 5
+  352 "dialogs/images/button_down.png"
+    357 3 5 3 5
+  358 5 7 5 7
+1000
+12 999
+  100 DIALOG_WIDGET_BUTTON
+  351 "dialogs/images/button_up.png"
+    357 3 5 3 5
+  352 "dialogs/images/button_down.png"
+    357 3 5 3 5
+  358 5 7 5 7
+1000
+12 999
+  100 DIALOG_WIDGET_SEPARATOR
+  351 "dialogs/images/separator.png"
+    357 1 1 1 1
+  358 1 1 1 1
+1000
+12 999
+  100 DIALOG_WIDGET_CHECK_BUTTON
+  351 "dialogs/images/check_off.png"
+    357 0 0 0 0
+  354 "dialogs/images/check_on.png"
+    357 0 0 0 0
+  358 4 5 4 5
+1000
+12 999
+  100 DIALOG_WIDGET_RADIO_BUTTON
+  351 "dialogs/images/radio_off.png"
+    357 0 0 0 0
+  354 "dialogs/images/radio_on.png"
+    357 0 0 0 0
+  358 4 5 4 5
+1000
+12 999
+  100 DIALOG_WIDGET_SLIDER_BASE_HORIZONTAL
+  351 "dialogs/images/slider_horiz.png"
+    357 1 1 0 0
+  358 4 4 8 8
+1000
+12 999
+  100 DIALOG_WIDGET_SLIDER_KNOB_HORIZONTAL
+  351 "dialogs/images/check_on.png"
+    357 0 0 0 0
+  358 4 5 4 5
+1000
+12 999
+  100 DIALOG_WIDGET_SLIDER_BASE_VERTICAL
+  351 "dialogs/images/slider_vert.png"
+    357 0 0 1 1
+  358 8 8 4 4
+1000
+12 999
+  100 DIALOG_WIDGET_SLIDER_KNOB_VERTICAL
+  351 "dialogs/images/check_on.png"
+    357 0 0 0 0
+  358 4 5 4 5
+1000
+12 999
+  100 "DIALOG_WIDGET_AREA"
+  351 "dialogs/images/lightbg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+12 999
+  100 "SETTINGS_AREADESK_AREA"
+  351 "dialogs/images/window.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+12 999
+  100 "SETTINGS_DESKTOP_AREA"
+  351 "dialogs/images/darkbg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+12 999
+  100 "SETTINGS_AREA_AREA"
+  351 "dialogs/images/darkbg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+1 999
+  100 "DIALOG"
+  351 "*font-dialog"
+    204 1
+    205 192 192 192
+    206 0 0 0
+    201 0
+1000
+1 999
+  100 "DIALOG_BUTTON"
+  351 "*font-dialog"
+    204 1
+    205 255 255 255
+    206 0 0 0
+    201 512
+1000
+1 999
+  100 "DIALOG_WIDGET_TEXT"
+  351 "*font-dialog"
+  204 1
+  205 192 192 192
+  206 0 0 0
+  201 0
+1000
+1 999
+  100 "DIALOG_WIDGET_CHECK_BUTTON"
+  351 "*font-dialog"
+  204 1
+  205 192 192 192
+  206 0 0 0
+  201 0
+1000
+1 999
+  100 "DIALOG_WIDGET_RADIO_BUTTON"
+  351 "*font-dialog"
+  204 1
+  205 192 192 192
+  206 0 0 0
+  201 0
+1000
+1 999
+  100 "DIALOG_WIDGET_BUTTON"
+  351 "*font-dialog"
+  204 1
+  205 255 255 255
+  206 0 0 0
+  201 0
+1000
+12 999
+  100 DESKTOP_DRAGBUTTON_HORIZ
+  351 "common/images/dragbar_horiz.png"
+  357 132 132 0 0
+  352 "common/images/dragbar_horiz.png"
+  357 132 132 0 0
+1000
+12 999
+  100 DESKTOP_RAISEBUTTON_HORIZ
+  351 "dragbar/images/uparrow.png"
+  352 "dragbar/images/uparrow_cl.png"
+1000
+12 999
+  100 DESKTOP_LOWERBUTTON_HORIZ
+  351 "dragbar/images/downarrow.png"
+  352 "dragbar/images/downarrow_cl.png"
+1000
+12 999
+  100 DESKTOP_DESKRAY_HORIZ
+  351 "common/images/dragbar_horiz.png"
+  357 132 132 0 0
+  352 "common/images/dragbar_horiz.png"
+  357 132 132 0 0
+1000
+12 999
+  100 DESKTOP_DRAGBUTTON_VERT
+  351 "dragbar/images/dragbar_vert.png"
+    357 0 0 132 132
+  352 "dragbar/images/dragbar_vert.png"
+    357 0 0 132 132
+1000
+12 999
+  100 DESKTOP_RAISEBUTTON_VERT
+  351 "dragbar/images/leftarrow.png"
+  352 "dragbar/images/leftarrow_cl.png"
+1000
+12 999
+  100 DESKTOP_LOWERBUTTON_VERT
+  351 "dragbar/images/rightarrow.png"
+  352 "dragbar/images/rightarrow_cl.png"
+1000
+12 999
+  100 DESKTOP_DESKRAY_VERT
+  351 "dragbar/images/dragbar_vert.png"
+  357 132 132 0 0
+  352 "dragbar/images/dragbar_vert.png"
+  357 132 132 0 0
+1000
+12 999
+  100 WARPFOCUS
+  351 "focuslist/images/lightbg.png"
+    357 2 2 2 2
+  352 "focuslist/images/lightbg_hl.png"
+    357 2 2 2 2
+  358 3 3 3 3
+1000
+1 999
+  100 "WARPFOCUS"
+  351 "*font-focus"
+    204 1
+    205 192 192 192
+    206 0 0 0
+    201 0
+  352 "*font-focus"
+    204 1
+    205 255 255 255
+    206 0 0 0
+    201 0
+1000
+12 999
+  100 ICONBOX_HORIZONTAL
+  351 "iconbox/images/bg_h.png"
+    357 8 8 8 4
+  358 10 10 10 6
+1000
+12 999
+  100 ICONBOX_VERTICAL
+  351 "iconbox/images/bg_v.png"
+    357 8 4 8 8
+  358 10 6 10 10
+1000
+12 999
+  100 ICONBOX_SCROLLBAR_BASE_HORIZONTAL
+  351 "iconbox/images/base_h.png"
+    357 0 0 0 0
+  358 4 4 0 0
+1000
+12 999
+  100 ICONBOX_SCROLLBAR_KNOB_HORIZONTAL
+  351 "iconbox/images/bar_h.png"
+    357 2 2 0 0
+  358 1 1 0 0
+1000
+12 999
+  100 ICONBOX_SCROLLKNOB_HORIZONTAL
+  351 "iconbox/images/knob_h.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 ICONBOX_SCROLLBAR_BASE_VERTICAL
+  351 "iconbox/images/base_v.png"
+    357 0 0 0 0
+  358 0 0 4 4
+1000
+12 999
+  100 ICONBOX_SCROLLBAR_KNOB_VERTICAL
+  351 "iconbox/images/bar_v.png"
+    357 0 0 2 2
+  358 0 0 1 1
+1000
+12 999
+  100 ICONBOX_SCROLLKNOB_VERTICAL
+  351 "iconbox/images/knob_v.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 ICONBOX_COVER_VERTICAL
+  351 "iconbox/images/cover_v.png"
+    357 6 2 6 6
+  358 8 4 8 8
+1000
+12 999
+  100 ICONBOX_COVER_HORIZONTAL
+  351 "iconbox/images/cover_h.png"
+    357 6 6 6 2
+  358 8 8 8 4
+1000
+12 999
+  100 ICONBOX_ARROW_LEFT
+  351 "iconbox/images/arrow_left.png"
+    357 0 0 0 0
+  352 "iconbox/images/arrow_left_cl.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 ICONBOX_ARROW_RIGHT
+  351 "iconbox/images/arrow_right.png"
+    357 0 0 0 0
+  352 "iconbox/images/arrow_right_cl.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 ICONBOX_ARROW_UP
+  351 "iconbox/images/arrow_up.png"
+    357 0 0 0 0
+  352 "iconbox/images/arrow_up_cl.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 ICONBOX_ARROW_DOWN
+  351 "iconbox/images/arrow_down.png"
+    357 0 0 0 0
+  352 "iconbox/images/arrow_down_cl.png"
+    357 0 0 0 0
+  358 0 0 0 0
+1000
+12 999
+  100 DEFAULT_ICON_BUTTON
+  351 "iconbox/images/icon.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+12 999
+  100 ICONBOX_TITLE_MAIN
+  351 "common/images/bg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+1 999
+  100 "ICONBOX_WINDOW_TITLE"
+  351 "*font-iconbox"
+  204 1
+  205 255 255 255
+  206 0 0 0
+  201 0
+1000
+17 999;  100 "ICONBOX";  12  "ICONBOX_TITLE_MAIN";  1  "ICONBOX_WINDOW_TITLE";  645  16;1000
+12 999
+  100 PAGER_SEL
+  351 "pager/images/selected.png"
+    357 2 2 2 2
+  358 2 2 2 2
+1000
+12 999
+  100 PAGER_BACKGROUND
+  351 "common/images/bg.png"
+    357 2 2 2 2
+1000
+12 999
+  100 PAGER_WIN
+  351 "pager/images/window.png"
+    357 1 1 1 1
+1000
+12 999
+  100 PAGER_TITLE_MAIN
+  351 "common/images/bg.png"
+    357 2 2 2 2
+  358 4 4 4 4
+1000
+1 999
+  100 "PAGER_WINDOW_TITLE"
+  351 "*font-pager"
+  204 1
+  205 255 255 255
+  206 0 0 0
+  201 0
+1000
+17 999;  100 "PAGER";  12  "PAGER_TITLE_MAIN";  1  "PAGER_WINDOW_TITLE";  645  16;1000
+12 999
+  100 DEFAULT_DOCK_BUTTON
+  351 "dock/images/icon.png"
+    357 6 6 6 6
+1000
+12 999
+  100 EPPLET_BACKGROUND_HORIZONTAL
+  351 "epplets/images/bg_h.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_BACKGROUND_VERTICAL
+  351 "epplets/images/bg_v.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_BUTTON
+  351 "epplets/images/button_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/button_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/button_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_TOGGLEBUTTON_OFF
+  351 "epplets/images/togglebutton_up.png"
+    357 2 2 2 2
+  353 "epplets/images/togglebutton_up.png"
+    357 2 2 2 2
+  352 "epplets/images/togglebutton_down.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_TOGGLEBUTTON_ON
+  351 "epplets/images/togglebutton_down.png"
+    357 2 2 2 2
+  353 "epplets/images/togglebutton_down.png"
+    357 2 2 2 2
+  352 "epplets/images/togglebutton_up.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_DRAWINGAREA
+  351 "epplets/images/drawingarea.png"
+    357   2 2 2 2
+1000
+12 999
+  100 EPPLET_HSLIDER_BASE
+  351 "epplets/images/slider_base_h.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_HSLIDER_KNOB
+  351 "epplets/images/slider_knob_h.png"
+    357 2 2 2 2
+  352 "epplets/images/slider_knob_h.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_VSLIDER_BASE
+  351 "epplets/images/slider_base_v.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_VSLIDER_KNOB
+  351 "epplets/images/slider_knob_v.png"
+    357 2 2 2 2
+  352 "epplets/images/slider_knob_v.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_POPUP_BASE
+  351 "epplets/images/bg_v.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_POPUP_ENTRY
+  351 "epplets/images/button_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/button_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/button_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_HBAR_BASE
+  351 "epplets/images/drawingarea.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_HBAR_BAR
+  351 "epplets/images/bar.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_VBAR_BASE
+  351 "epplets/images/drawingarea.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_VBAR_BAR
+  351 "epplets/images/bar.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_ARROW_UP
+  351 "epplets/images/arrow_up_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/arrow_up_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/arrow_up_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_ARROW_DOWN
+  351 "epplets/images/arrow_down_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/arrow_down_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/arrow_down_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_ARROW_LEFT
+  351 "epplets/images/arrow_left_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/arrow_left_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/arrow_left_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_ARROW_RIGHT
+  351 "epplets/images/arrow_right_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/arrow_right_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/arrow_right_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_PLAY
+  351 "epplets/images/play_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/play_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/play_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_STOP
+  351 "epplets/images/stop_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/stop_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/stop_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_PAUSE
+  351 "epplets/images/pause_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/pause_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/pause_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_PREVIOUS
+  351 "epplets/images/prev_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/prev_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/prev_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_NEXT
+  351 "epplets/images/next_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/next_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/next_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_EJECT
+  351 "epplets/images/eject_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/eject_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/eject_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_CLOSE
+  351 "epplets/images/close_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/close_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/close_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_FAST_FORWARD
+  351 "epplets/images/ff_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/ff_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/ff_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_REWIND
+  351 "epplets/images/rw_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/rw_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/rw_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_REPEAT
+  351 "epplets/images/repeat_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/repeat_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/repeat_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_SKIP
+  351 "epplets/images/skip_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/skip_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/skip_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_HELP
+  351 "epplets/images/help_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/help_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/help_cl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 EPPLET_CONFIGURE
+  351 "epplets/images/config_fg.png"
+    357 2 2 2 2
+  353 "epplets/images/config_fg.png"
+    357 2 2 2 2
+  352 "epplets/images/config_cl.png"
+    357 2 2 2 2
+1000
+1 999
+  100 "EPPLET_LABEL"
+  351 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 182 178 190
+1000
+1 999
+  100 "EPPLET_BUTTON"
+  351 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 182 178 190
+  352 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 128 125 133
+1000
+1 999
+  100 "EPPLET_TOGGLEBUTTON_ON"
+  351 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 128 125 133
+1000
+1 999
+  100 "EPPLET_TOGGLEBUTTON_OFF"
+  351 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 182 178 190
+1000
+1 999
+  100 "EPPLET_POPUP"
+  351 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 182 178 190
+  352 "*font-epplet"
+  204 1
+  205 0 0 0
+  206 128 125 133
+1000
+1 999
+  100 "EPPLET_TEXT_TINY"
+  351 "*font-epplet-small"
+  204 1
+  205 0 0 0
+  206 182 178 190
+1000
+1 999
+  100 "EPPLET_TEXT_MEDIUM"
+  351 "*font-epplet-medium"
+  204 1
+  205 0 0 0
+  206 182 178 190
+1000
+1 999
+  100 "EPPLET_TEXT_LARGE"
+  351 "*font-epplet-large"
+  204 1
+  205 0 0 0
+  206 182 178 190
+1000
+12 999
+  100 "ETERM_BG"
+  351 "Eterm/images/bg.png"
+    357 5 5 5 5
+  358 5 5 5 5
+1000
+12 999
+  100 "ETERM_ARROW_UP"
+  351 "Eterm/images/uparrow_fg.png"
+    357 0 0 0 0
+  353 "Eterm/images/uparrow_hl.png"
+    357 0 0 0 0
+  352 "Eterm/images/uparrow_cl.png"
+    357 0 0 0 0
+1000
+12 999
+  100 "ETERM_ARROW_DOWN"
+  351 "Eterm/images/downarrow_fg.png"
+    357 0 0 0 0
+  353 "Eterm/images/downarrow_hl.png"
+    357 0 0 0 0
+  352 "Eterm/images/downarrow_cl.png"
+    357 0 0 0 0
+1000
+12 999
+  100 "ETERM_ARROW_LEFT"
+  351 "Eterm/images/leftarrow_fg.png"
+    357 0 0 0 0
+  353 "Eterm/images/leftarrow_hl.png"
+    357 0 0 0 0
+  352 "Eterm/images/leftarrow_cl.png"
+    357 0 0 0 0
+1000
+12 999
+  100 "ETERM_ARROW_RIGHT"
+  351 "Eterm/images/downarrow_fg.png"
+    357 0 0 0 0
+  353 "Eterm/images/downarrow_hl.png"
+    357 0 0 0 0
+  352 "Eterm/images/downarrow_cl.png"
+    357 0 0 0 0
+1000
+12 999
+  100 "ETERM_TROUGH"
+  351 "Eterm/images/trough.png"
+    357 2 2 2 2
+1000
+12 999
+  100 "ETERM_ANCHOR"
+  351 "Eterm/images/anchor_fg.png"
+    357 2 2 2 2
+  353 "Eterm/images/anchor_hl.png"
+    357 2 2 2 2
+1000
+12 999
+  100 "ETERM_MENU_BOX"
+  351 "Eterm/images/menubg.png"
+    357 8 8 8 8
+  358 8 8 8 8
+1000
+12 999
+  100 "ETERM_MENU_ITEM"
+  351 "Eterm/images/menubg.png"
+    357 8 8 8 8
+    358 8 8 8 8
+  353 "Eterm/images/menu_selected.png"
+    357 3 3 3 3
+  352 "Eterm/images/menu_selected.png"
+    357 3 3 3 3
+  358 0 13 0 0
+1000
+12 999
+  100 "ETERM_MENU_SUBMENU"
+  351 "Eterm/images/submenu.png"
+    357 3 8 3 3
+  353 "Eterm/images/submenu_selected.png"
+    357 3 8 3 3
+  352 "Eterm/images/submenu_selected.png"
+    357 3 8 3 3
+  358 0 13 0 0
+1000

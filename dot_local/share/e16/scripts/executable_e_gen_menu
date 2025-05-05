@@ -1,0 +1,492 @@
+#!/usr/bin/python3
+#
+# generates menus for e16 from .desktop files
+#
+import os, sys
+import getopt
+import subprocess
+
+
+dbg = 0
+N = 0
+dtis = {}
+dt_seen = {}
+
+
+class DTI:  # .desktop item
+    def __init__(self, file, name, exec, icon, cats, type):
+        self.file = file
+        self.name = name
+        self.exec = exec
+        self.icon = icon
+        self.cats = cats
+        self.type = type
+
+
+def D(str):
+    if dbg > 0:
+        print(str)
+
+
+def D2(str):
+    if dbg >= 2:
+        print(str)
+
+
+def D3(str):
+    if dbg >= 3:
+        print(str)
+
+
+def getenv(env, dflt=''):
+    if env in os.environ:
+        return os.environ[env]
+    else:
+        return dflt
+
+
+def FileExt(file):
+    return os.path.splitext(file)[1]
+
+
+# Make directory list, check that they exist
+def MkDirList(pfxs, sufs, sep=''):
+    r = []
+    for pfx in pfxs:
+        for suf in sufs:
+            dir = f'{pfx}{sep}{suf}'
+            if os.path.isdir(dir):
+                r += [dir]
+    return r
+
+
+# Remove duplicates and nulls in dir list
+def RemoveDuplicates(arr):
+    r = []
+    for itm in arr:
+        if itm == '' or itm in r:
+            continue
+        r.append(itm)
+    return r
+
+
+# Make dir if non-existing
+def MkDir(dir):
+    if not os.path.isdir(dir):
+        os.makedirs(dir, 0o755)
+        D(f'mkdir {dir}')
+
+
+# Make simple menus
+def MakeMenu(name, tmpl):
+    file = EdirMenus + '/' + name
+    D(f'Generating {name} -> {file}')
+    if os.path.exists(file):
+        return
+
+    f = open(file, 'w')
+    for line in tmpl:
+        (t, n, p) = line.split(':')
+        if t == 't':
+            f.write(f'"{n}"\n')
+        elif t == 'm':
+            f.write(f'"{n}" NULL menu "{p}"\n')
+        elif t == 'x':
+            f.write(f'"{n}" NULL exec "{p}"\n')
+        elif t == 'c':
+            f.write(f'"{n}" NULL "{p}"\n')
+    f.close()
+
+
+# Make the Epplets menu
+def MakeEppsMenu(name):
+    dirs = []
+    file = EdirMenus + '/' + name
+    D(f'Generating {name} -> {file}')
+
+    f = open(file, 'w')
+    f.write('"Enlightenment Epplets"\n')
+
+    for dir in os.environ['PATH'].split(':'):
+#       D(f'P = {dir}')
+        if dir in dirs:
+            continue
+        if not os.path.isdir(dir):
+            continue
+        dirs.append(dir)
+        D2(f'Looking for epplets in {dir}')
+        for file in os.listdir(dir):
+            if not file.endswith('.epplet'):
+                continue
+            epp = file.removesuffix('.epplet')
+            f.write(f'"{epp}" "{EdirRoot}/epplet_icons/{epp}.icon" exec "{dir}/{file}"\n')
+    f.close()
+
+
+# Process a .desktop file
+def ProcessFile(file, cats, type):
+    global N
+    global dtis
+
+    D(f'- File {file}')
+
+    if not os.path.isfile(file):
+        print(f'Not found: {file}')
+        exit(1)
+
+    # Global ref no
+    N += 1
+
+    Name = Exec = Icon = Ndis = ''
+    Nam1 = Nam2 = Nam3 = ''
+    Cats = []
+    if cats:
+        Cats.append(cats)
+    Type = type
+
+    f = open(file, 'r')
+    for line in f:
+        line = line.strip()
+#       print(line)
+        if len(line) == 0:
+            continue
+        if line.startswith('#'):
+            continue
+        if line.startswith('['):
+            if line != '[Desktop Entry]':
+                D2(f'Break: {line}')
+                break
+            continue
+
+        (tok, val) = line.split('=', 1)
+
+        if tok.startswith('Name'):
+            if tok == 'Name':
+                Name = val
+            elif loc1 and tok == f'Name[{loc1}]':
+                Nam1 = val
+            elif loc2 and tok == f'Name[{loc2}]':
+                Nam2 = val
+            elif loc3 and tok == f'Name[{loc3}]':
+                Nam3 = val
+
+            if Nam1 or Nam2 or Nam3:
+                if Nam1:
+                    Name = Nam1
+                elif Nam2:
+                    Name = Nam2
+                else:
+                    Name = Nam3
+
+        elif tok == 'Exec':
+            Exec = val
+
+        elif tok == 'Icon':
+            Icon = val
+
+        elif tok == 'OnlyShowIn':
+            Type = val.split(';')[0]
+
+        elif tok == 'Categories':
+            if cats:
+                continue
+            for cat in val.split(';'):
+                if cat == 'KDE':
+                    Type = 'KDE'
+                    continue
+                if cat in CatsRemove:
+                    continue
+                if cat.startswith('X-'):
+                    continue
+                Cats.append(cat)
+
+        elif tok == 'Type':
+            if val == 'Application':
+                continue
+            Name = ''
+            break
+
+        elif tok == 'NoDisplay':
+            Ndis = val
+
+    f.close()
+
+    if Ndis == 'true' or Name == '' or Exec == '' or len(Cats) == 0:
+        D3('Skipped: %-24s %-4s %-24s %-20s %-20s %s' %
+            (file, Name, Ndis, Exec, Icon, Cats))
+        return
+
+    # Basename
+    File = os.path.basename(file)
+
+    D3('%-24s: %-24s %-20s %-20s %s\n' % (File, Name, Exec, Icon, Cats))
+
+    if not Type:
+        if File.startswith('gnome'):
+            Type = 'GNOME'
+        elif File.startswith('kde'):
+            Type = 'KDE'
+        else:
+            Type = 'Other'
+
+    ndti = f'{Name}-{N}'            # Make key unique
+    ndti = ndti.lower()             # To lower case (for sorting)
+#   $Exec =~ s/\s*%(f|F|i|k|m|n|N|u|U|v)//g;    # Strip unwanted args
+#   $Exec =~ s/\s*-\w+\s*"%c"//g;               # Strip option with caption
+##  $Exec =~ s/"%c"/'$Name'/g;                  # Alternatively - Substitute caption
+    Exec = Exec.split('%', 1)[0].strip()        # Strip all args
+    dti = DTI(File, Name, Exec, Icon, Cats, Type)
+    dtis[ndti] = dti
+
+
+# Process all .desktop files in a directory
+def ProcessDir(dir, cats, type):
+    global dt_seen
+
+    for name in os.listdir(dir):
+        if not name.endswith('.desktop'):
+            continue
+        if name in dt_seen:
+            D(f'Skip duplicate {name} (in {dir})')
+            continue
+        dt_seen[name] = 1
+
+        file = f'{dir}/{name}'
+        ProcessFile(file, cats, type)
+
+
+# Find that $#@! thing
+def FindIcon(icon):
+    if not icon:
+        return icon
+    if icon.startswith('/'):
+        if os.path.isfile(icon):
+            return icon
+        return ''
+
+    for dir in IconDirs:
+        file = f'{dir}/{icon}'
+        D2(f'Check icon: {icon} : {file}')
+        if os.path.isfile(file):
+            return file
+        if not FileExt(icon) in ['png', 'xpm', 'svg']:
+            for ext in ['png', 'xpm']:
+                fil2 = f'{file}.{ext}'
+                D2(f'Check icon: {icon} : {fil2}')
+                if os.path.isfile(fil2):
+                    return fil2
+
+    for dir in IconDirs2:
+        for sz in IconSizes:
+            sdir = f'{dir}/{sz}'
+            if not os.path.isdir(sdir):
+                continue
+            D2(f'Check icon: {icon} in {sdir}')
+            if icon.startswith('stock'):
+                glob = f'{sdir}/stock/*/{icon}.png'
+                D2(f'Check icon: {icon} in {glob}')
+                # FIXME
+#               $ii = glob("$i");
+#               return $ii if (-f $ii);
+            else:
+                for icat in IconCats:
+                    idir = f'{sdir}/{icat}'
+                    if not os.path.isdir(idir):
+                        continue
+                    file = f'{idir}/{icon}'
+                    if FileExt(icon) in ['png', 'xpm', 'svg']:
+                        D2(f'Check icon: {icon}: {file}')
+                        if os.path.isfile(file):
+                            return file
+                    else:
+                        for ext in ['png', 'xpm', 'svg']:
+                            fil2 = f'{file}.{ext}'
+                            D2(f'Check icon: {icon}: {fil2}')
+                            if os.path.isfile(fil2):
+                                return fil2
+    D(f'Icon not found: {icon}')
+    return icon
+
+
+# Make the menu for a given app type
+def MakeAppsMenu(type):
+    mdir = f'menus_{type}'
+    dir = f'{EdirMenus}/{mdir}'
+    D(f'Generating menu: {type} in {dir}')
+    MkDir(dir)
+
+    # Sort the apps into categories
+    menus = {}
+    for ndti in sorted(dtis):
+        dti = dtis[ndti]
+#       if dti.type != type: continue
+        cat = dti.cats[0]   # First category
+        if cat not in menus:
+            menus[cat] = []
+        menus[cat].append(ndti)
+
+    # Make top- and sub-menus
+    ftop = open(f'{dir}/index.menu', 'w')
+    ftop.write(f'"{type} Menu"\n')
+    for cat in sorted(menus):
+        fsub = open(f'{dir}/{cat}.menu', 'w')
+        D(f'- Submenu: {cat}')
+        ftop.write(f'"{cat}" "" menu "{mdir}/{cat}.menu"\n')
+        fsub.write(f'"{cat}"\n')
+        for ndti in sorted(menus[cat]):
+            dti = dtis[ndti]
+            D2(f' - Item: {ndti}: {dti.file}')
+            icon = FindIcon(dti.icon)
+            fsub.write('"%s" "%s" exec "%s"\n' % (dti.name, icon, dti.exec))
+        fsub.close()
+    ftop.close()
+
+
+def EeshCall(cmd):
+#   os.system(f'eesh "{cmd}" >/dev/null')
+    subprocess.run(['eesh'] + cmd.split(), stdout=subprocess.DEVNULL)
+
+
+# Close all windows named "Message" (we assume they are E dialogs)
+def EeshCloseMessageWindows():
+    EeshCall('wop Message* close')
+
+
+##############################################################################
+# Here we go
+##############################################################################
+
+opts, args = getopt.getopt(sys.argv[1:], 'd', ['debug'])
+for opt, val in opts:
+    if opt in ['-d', '--debug']:
+        dbg += 1
+
+# Likely  prefixes
+SysPrefixes  = []
+SysPrefixes += ['/usr/local', '/usr', '/opt']
+SysPrefixes += ['/opt/kde', '/opt/kde3', getenv('KDEDIR')]
+SysPrefixes += ['/opt/gnome'] # SUSE
+XdgHome = getenv('XDG_DATA_HOME', getenv('HOME') + '/.local/share')
+Prefixes = [XdgHome]
+XdgDirs = getenv('XDG_DATA_DIRS')
+Prefixes += XdgDirs.split(':')
+Prefixes += MkDirList(SysPrefixes, ['/share'])
+D(f'Prefixes = "{Prefixes}"')
+Prefixes = RemoveDuplicates(Prefixes)
+D(f'Prefixes = "{Prefixes}"')
+
+SufDirs = ['/applications', '/applications/kde', '/applications/kde4']
+
+# Where to look for GNOME/KDE stuff
+AppDirs = MkDirList(Prefixes, SufDirs)
+
+D(f'AppDirs  = "{AppDirs}"')
+
+IconDirs  = MkDirList(Prefixes, ['/pixmaps', '/icons'])
+IconDirs2 = MkDirList(Prefixes, ['/icons'])
+Themes    = ['default.kde', 'gnome', 'hicolor', 'mate', 'Adwaita']
+#Themes   += ['HighContrast']
+IconDirs2 = MkDirList(IconDirs2, Themes, sep='/')
+IconCats  = ['apps', 'filesystems', 'actions', 'devices', 'categories', 'places', 'mimetypes']
+IconCats += ['legacy']
+#IconCats += ['stock']
+IconSizes = ['48x48', '32x32', '24x24', '128x128', '16x16']
+IconSizes += ['scalable']
+
+D(f'IconDirs  = "{IconDirs}"')
+D(f'IconDirs2 = "{IconDirs2}"')
+
+# Pick up env vars
+EdirUser = getenv('ECONFDIR')
+EdirRoot = getenv('EROOT')
+EdirBin  = getenv('EBIN')
+
+if EdirUser == '':
+    EdirUser = getenv('HOME') + '/.e16'
+if EdirRoot == '':
+    EdirRoot = '/usr/share/e16'
+if EdirBin == '':
+    EdirBin  = '/usr/bin'
+D(f'EdirUser = "{EdirUser}"')
+D(f'EdirRoot = "{EdirRoot}"')
+D(f'EdirBin  = "{EdirBin}"')
+
+EdirMenus = EdirUser + '/menus'
+D(f'EdirMenus = "{EdirMenus}"')
+
+# Localization bits. There may be better ways to do this.
+Lang = getenv('LANG')
+loc1 = Lang
+loc2 = Lang.split('.')[0].split('@')[0]
+loc3 = Lang.split('_')[0]
+if loc1 == loc2:
+    loc1 = ''
+D(f'Locale = "{Lang}:{loc1}:{loc2}:{loc3}"')
+
+# Put EBIN first in path
+os.environ['PATH'] = f"{EdirBin}:{os.environ['PATH']}"
+
+CatsRemove = [
+    'ConsoleOnly',
+    'Qt',
+    'QT',
+    'GTK',
+    'GNOME',
+    'KDE',
+    'UtilityApplication',
+    'Applications',
+    'Application',
+    #'X-.*',
+]
+
+MainMenu = [
+    't:User menus:',
+    'm:User application list:user_apps.menu',
+    'm:Applications:menus_apps/index.menu',
+    'm:Epplets:epplets.menu',
+    'c:Restart:exit restart',
+    'c:Log out:exit logout'
+]
+
+UserAppsMenu = [
+    't:User Application List:',
+    'x:XTerm:xterm',
+    'x:urxvt:urxvt',
+    'x:Firefox:firefox',
+    'x:Thunderbird:thunderbird',
+    'x:Seamonkey:seamonkey',
+    'x:Shotwell:shotwell',
+    'x:Pidgin:pidgin',
+    'x:Gmplayer:gmplayer',
+    'x:Xine:xine',
+    'x:The GIMP:gimp',
+    'x:Geeqie:geeqie',
+    'x:XV:xv',
+    'x:XMag:xmag',
+    'x:Grip:grip',
+    'x:Audacious:audacious',
+]
+
+EeshCloseMessageWindows()
+EeshCall('dialog_ok Menus are being generated... Please Wait')
+
+# Process new style (GNOME2, KDE2/3) directories
+for dir in AppDirs:
+    D(f'Processing directory: {dir}')
+    if not os.path.isdir(dir):
+        D(f'- Not found')
+        continue
+    ProcessDir(dir, None, None)
+
+# Make menu dir and scaled icon dir
+MkDir(EdirMenus)
+
+# Make the menus
+MakeMenu('file.menu', MainMenu)
+MakeMenu('user_apps.menu', UserAppsMenu)
+MakeEppsMenu('epplets.menu')
+MakeAppsMenu('apps')
+
+EeshCloseMessageWindows()
+EeshCall('menus reload')
+EeshCall('dialog_ok Menu generation complete')

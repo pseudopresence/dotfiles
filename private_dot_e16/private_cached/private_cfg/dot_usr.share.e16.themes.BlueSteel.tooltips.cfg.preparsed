@@ -1,0 +1,31 @@
+1001 1
+12 999
+  100 DEFAULT_TOOLTIP_MAIN
+  351 "tooltips/images/cloud_large.png"
+    357 25 25 25 25
+  358 25 25 25 25
+1000
+12 999
+  100 DEFAULT_TOOLTIP_CLOUD1
+  351 "tooltips/images/cloud_small.png"
+1000
+12 999
+  100 DEFAULT_TOOLTIP_CLOUD2
+  351 "tooltips/images/cloud_small.png"
+1000
+12 999
+  100 DEFAULT_TOOLTIP_CLOUD3
+  351 "tooltips/images/cloud_small.png"
+1000
+12 999
+  100 DEFAULT_TOOLTIP_CLOUD4
+  351 "tooltips/images/cloud_small.png"
+1000
+1 999
+  100 "TOOLTIP_TEXT"
+  351 "*font-tooltip"
+  204 0
+  205 0 0 0
+  201 0
+1000
+17 999;  100 "DEFAULT";  12  "DEFAULT_TOOLTIP_MAIN";  641  "DEFAULT_TOOLTIP_CLOUD1";  642  "DEFAULT_TOOLTIP_CLOUD2";  643  "DEFAULT_TOOLTIP_CLOUD3";  644  "DEFAULT_TOOLTIP_CLOUD4";  646 "DO_HELP_BUTTON";  1  "TOOLTIP_TEXT";  645  64;1000

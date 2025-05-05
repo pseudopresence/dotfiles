@@ -1,0 +1,73 @@
+1001 1
+800 999
+  100 DEFAULT
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/cursor.xbm
+1000
+800 999
+  100 MOVE
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/move.xbm
+1000
+800 999
+  100 RESIZE_H
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/resize_h.xbm
+1000
+800 999
+  100 RESIZE_V
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/resize_v.xbm
+1000
+800 999
+  100 RESIZE_BR
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/resize_br.xbm
+1000
+800 999
+  100 RESIZE_BL
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/resize_bl.xbm
+1000
+800 999
+  100 KILL
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/kill.xbm
+1000
+800 999
+  100 ICONIFY
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/iconify.xbm
+1000
+800 999
+  100 MAX
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/max.xbm
+1000
+800 999
+  100 STICK
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/stick.xbm
+1000
+800 999
+  100 ARROW_LEFT
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/arrow_left.xbm
+1000
+800 999
+  100 ARROW_RIGHT
+  802 255 255 255
+  801 0 0 0
+  803 cursors/bw_images/arrow_right.xbm
+1000
